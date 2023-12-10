@@ -1,0 +1,10 @@
+STL = standard template library
+
+Dynamic array --> Vector
+
+declare Vector:
+
+vector<type>vector_name --> creates vector with 0 element
+vector<type>(N)
+N = size of array
+vector<type>(N, V2)

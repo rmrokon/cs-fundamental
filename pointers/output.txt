@@ -1,0 +1,2 @@
+address of ptr - 0x7fff7ff4c310
+value of ptr - 100
