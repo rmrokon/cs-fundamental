@@ -1,14 +1,15 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
+
 class Node
 {
-public:
-    int value;
-    Node *next;
-    Node(int value)
+    public:
+        string value;
+        Node * next;
+    Node(string value)
     {
-        this->value = value;
-        this->next = NULL;
+        this->value=value;
+        this->next=NULL;
     }
 };
 
@@ -19,7 +20,7 @@ public:
     Node *tail = NULL;
     int sz = 0;
 
-    void push(int val)
+    void push(string val)
     {
         sz++;
         Node *newNode = new Node(val);
@@ -45,7 +46,7 @@ public:
         }
     }
 
-    int front()
+    string front()
     {
         return head->value;
     }
@@ -61,25 +62,36 @@ public:
     }
 };
 
+
 int main()
 {
+    int queries;
+    cin >> queries;
     myQueue q;
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++)
+
+    while(queries > 0)
     {
         int x;
+        string s;
         cin >> x;
-        q.push(x);
+        if(x == 0)
+        {
+            cin >> s;
+            q.push(s);
+        }
+        if(x == 1)
+        {
+            if(q.empty())
+            {
+                cout << "Invalid" << endl;
+            }
+            else
+            {
+                cout << q.front() << endl;
+                q.pop();
+            }
+        }
+        queries--;
     }
-
-    cout << q.size() << " - ";
-
-    while (!q.empty())
-    {
-        cout << q.front() << endl;
-        q.pop();
-    }
-
     return 0;
 }
